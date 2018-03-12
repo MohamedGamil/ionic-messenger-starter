@@ -12,6 +12,7 @@ import { firebaseConfig } from './app.constants';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,6 +24,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { ChatsProvider } from '../providers/chats/chats';
 import { ContactsProvider } from '../providers/contacts/contacts';
 import { FbRtdbProvider } from '../providers/fb-rtdb/fb-rtdb';
+import { FirestoreProvider } from '../providers/firestore/firestore';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { FbRtdbProvider } from '../providers/fb-rtdb/fb-rtdb';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,7 +57,8 @@ import { FbRtdbProvider } from '../providers/fb-rtdb/fb-rtdb';
     AuthProvider,
     ChatsProvider,
     ContactsProvider,
-    FbRtdbProvider
+    FbRtdbProvider,
+    FirestoreProvider
   ]
 })
 export class AppModule {}
